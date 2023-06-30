@@ -1,6 +1,7 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
 
+import { TagList } from '@/app/_components/tag-list';
 import { getTagList } from '@/app/_libs/microcms';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -32,9 +33,7 @@ export default async function RootLayout({
   return (
     <html lang='ja'>
       <body className={inter.className}>
-        {tags.contents.map((content) => (
-          <p key={content.id}>{content.name}</p>
-        ))}
+        <TagList tags={tags.contents} />
         {children}
       </body>
     </html>
