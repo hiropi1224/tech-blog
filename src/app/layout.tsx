@@ -32,8 +32,10 @@ export default async function RootLayout({
 
   return (
     <html lang='ja'>
-      <body className={inter.className}>
-        <TagList tags={tags.contents} />
+      <body className={`${inter.className} m-auto max-w-2xl`}>
+        <div className='my-4 flex justify-center'>
+          <TagList tags={tags.contents} />
+        </div>
         {children}
       </body>
     </html>
