@@ -1,22 +1,14 @@
+import { ArticleItem } from '@/app/_components/article-item/article-item';
 import { getList } from '@/app/_libs/microcms';
 
 export default async function Home() {
   const data = await getList();
 
   return (
-    <main className='flex min-h-screen flex-col items-center'>
-      Hello, world!
-      <div className='flex flex-col'>
+    <main>
+      <div className='flex flex-col gap-8'>
         {data.contents.map((content) => (
-          <div key={content.id} className='border-b border-mauve-2'>
-            <div>{content.title}</div>
-            <div>{content.createdAt}</div>
-            <div>
-              {content.tags?.map((tag) => (
-                <p key={tag.id}>{tag.name}</p>
-              ))}
-            </div>
-          </div>
+          <ArticleItem key={content.id} article={content} />
         ))}
       </div>
     </main>
