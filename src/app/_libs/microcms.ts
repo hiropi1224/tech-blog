@@ -18,17 +18,16 @@ export type Writer = {
   name: string;
   profile: string;
   image?: MicroCMSImage;
-} & MicroCMSContentId &
-  MicroCMSDate;
+} & MicroCMSDate;
 
 // ブログの型定義
 export type Blog = {
   title: string;
   description: string;
   content: string;
-  thumbnail?: MicroCMSImage;
+  eyecatch?: MicroCMSImage;
+  toc_visible: boolean;
   tags?: Tag[];
-  writer?: Writer;
 };
 
 export type Article = Blog & MicroCMSContentId & MicroCMSDate;
