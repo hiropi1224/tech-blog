@@ -65,7 +65,7 @@ export const getDetail = async (
 ) => {
   const detailData = await client
     .getListDetail<Blog>({
-      endpoint: 'blog',
+      endpoint: 'blogs',
       contentId,
       queries,
     })
