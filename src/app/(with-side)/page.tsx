@@ -5,12 +5,10 @@ export default async function Home() {
   const data = await getList();
 
   return (
-    <main>
-      <div className='flex flex-col gap-4'>
-        {data.contents.map((content) => (
-          <ArticleItem key={content.id} article={content} />
-        ))}
-      </div>
+    <main className='flex flex-col gap-4'>
+      {data.contents.map((content) => (
+        <ArticleItem key={content.id} article={content} />
+      ))}
     </main>
   );
 }

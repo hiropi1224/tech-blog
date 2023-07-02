@@ -6,11 +6,11 @@ import { Article as ArticleType } from '@/app/_libs/microcms';
 
 const articleStyle = tv({
   slots: {
-    base: 'flex flex-col items-center justify-between gap-4',
+    base: 'mt-4 flex max-w-4xl flex-col items-center justify-between gap-4 rounded-sm bg-amber-1 px-4 md:mt-0',
     title: 'text-3xl font-bold',
     published: 'flex flex-row-reverse',
     article:
-      'prose prose-slate prose-headings:my-4 prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg',
+      'prose prose-slate w-full prose-headings:my-4 prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg',
   },
 });
 
@@ -34,7 +34,7 @@ export const Article: React.FC<Props> = ({ data }) => {
         dangerouslySetInnerHTML={{
           __html: data.content,
         }}
-      />
+      ></article>
     </main>
   );
 };

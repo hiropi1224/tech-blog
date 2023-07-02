@@ -1,4 +1,4 @@
-import './globals.css';
+import '@/app/globals.css';
 import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -17,17 +17,14 @@ export const metadata = {
   },
 };
 
-export default async function RootLayout(props: {
-  children: React.ReactNode;
-  side: React.ReactNode;
-}) {
+export default async function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang='ja'>
       <body
-        className={`${inter.className} m-auto flex flex-col bg-mauve-3 md:grid md:grid-cols-6 md:gap-4`}
+        className={`${inter.className} m-auto grid grid-cols-1 flex-col bg-mauve-3 md:grid md:grid-cols-6 md:gap-4`}
       >
-        <div className='md:col-span-3 md:col-start-2'>{props.children}</div>
-        <div className='md:col-span-1 md:col-start-5'>{props.side}</div>
+        <header className='col-span-6 h-20 bg-mauve-7'></header>
+        <div className='md:col-span-4 md:col-start-2'>{props.children}</div>
       </body>
     </html>
   );
