@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 
 import { Article } from '@/app/_components/article';
+import { Breadcrumb } from '@/app/_components/breadcrumb';
 import { getDetail } from '@/app/_libs/microcms';
 
 type Props = {
@@ -28,5 +29,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params }: Props) {
   const data = await getDetail(params.slug);
 
-  return <Article data={data} />;
+  return (
+    <div className='flex flex-col gap-4'>
+      <Breadcrumb title={data.title} />
+      <Article data={data} />
+    </div>
+  );
 }
