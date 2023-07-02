@@ -1,9 +1,6 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
 
-import { TagList } from '@/app/_components/tag-list';
-import { getTagList } from '@/app/_libs/microcms';
-
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -20,23 +17,17 @@ export const metadata = {
   },
 };
 
-export default async function RootLayout({
-  children,
-}: {
+export default async function RootLayout(props: {
   children: React.ReactNode;
+  side: React.ReactNode;
 }) {
-  const tags = await getTagList({
-    limit: 10,
-    orders: 'createdAt',
-  });
-
   return (
     <html lang='ja'>
-      <body className={`${inter.className} m-auto max-w-2xl`}>
-        <div className='my-4 flex justify-center'>
-          <TagList tags={tags.contents} />
-        </div>
-        {children}
+      <body
+        className={`${inter.className} m-auto flex flex-col bg-mauve-3 md:grid md:grid-cols-6 md:gap-4`}
+      >
+        <div className='md:col-span-3 md:col-start-2'>{props.children}</div>
+        <div className='md:col-span-1 md:col-start-5'>{props.side}</div>
       </body>
     </html>
   );

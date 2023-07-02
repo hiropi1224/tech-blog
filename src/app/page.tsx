@@ -6,7 +6,7 @@ export default async function Home() {
 
   return (
     <main>
-      <div className='flex flex-col gap-8'>
+      <div className='flex flex-col gap-4'>
         {data.contents.map((content) => (
           <ArticleItem key={content.id} article={content} />
         ))}
