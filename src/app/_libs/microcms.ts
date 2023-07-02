@@ -13,6 +13,12 @@ export type Tag = {
 } & MicroCMSContentId &
   MicroCMSDate;
 
+// カテゴリーの型定義
+export type Category = {
+  name: string;
+} & MicroCMSContentId &
+  MicroCMSDate;
+
 // ライターの型定義
 export type Writer = {
   name: string;
@@ -97,4 +103,16 @@ export const getTag = async (contentId: string, queries?: MicroCMSQueries) => {
     .catch(notFound);
 
   return detailData;
+};
+
+// カテゴリーの一覧を取得
+export const getCategoryList = async (queries?: MicroCMSQueries) => {
+  const listData = await client
+    .getList<Category>({
+      endpoint: 'categories',
+      queries,
+    })
+    .catch(notFound);
+
+  return listData;
 };
