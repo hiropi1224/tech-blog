@@ -14,7 +14,7 @@ type Props = {
 export const TagItem: React.FC<Props> = ({ tag }) => {
   return (
     <Link href={`/tags/${tag.id}`}>
-      <div className={tagStyle()}>{`#${tag.name}`}</div>
+      <div className={tagStyle()}>{`# ${tag.name}`}</div>
     </Link>
   );
 };

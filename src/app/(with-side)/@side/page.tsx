@@ -2,13 +2,9 @@ import { TagList } from '@/app/_components/tag-list';
 import { getCategoryList, getTagList } from '@/app/_libs/microcms';
 
 export default async function Side() {
-  const tags = await getTagList({
-    orders: 'createdAt',
-  });
+  const tags = await getTagList();
 
-  const categoryList = await getCategoryList({
-    limit: 10,
-  });
+  const categoryList = await getCategoryList();
 
   return (
     <div className='flex flex-col gap-4 lg:max-w-xs'>
