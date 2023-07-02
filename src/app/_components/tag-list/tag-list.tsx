@@ -5,7 +5,6 @@ import { Tag } from '@/app/_libs/microcms';
 
 type Props = {
   tags?: Tag[];
-  hasLink?: boolean;
 };
 
 const tagListStyle = tv({
