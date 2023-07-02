@@ -1,6 +1,8 @@
 import '@/app/globals.css';
 import { Inter } from 'next/font/google';
 
+import { Header } from '@/app/_components/header';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -23,7 +25,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
       <body
         className={`${inter.className} m-auto grid grid-cols-1 flex-col bg-mauve-3 md:grid md:grid-cols-6 md:gap-4`}
       >
-        <header className='col-span-6 h-20 bg-mauve-7'></header>
+        <Header />
         <div className='md:col-span-4 md:col-start-2'>{props.children}</div>
       </body>
     </html>
