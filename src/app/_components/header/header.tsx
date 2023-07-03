@@ -5,7 +5,9 @@ export const Header: React.FC = () => {
   return (
     <header className='col-span-6 bg-mauve-7 py-4 text-center'>
       <div className='flex flex-col items-center justify-center'>
-        <p className='text-lg font-bold'>Shirahamaのブログ</p>
+        <Link href='/'>
+          <p className='text-lg font-bold'>Shirahamaのブログ</p>
+        </Link>
         <Link
           href='https://github.com/hiropi1224'
           target='_blank'
