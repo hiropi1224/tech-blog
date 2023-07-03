@@ -2,7 +2,9 @@ import { TagList } from '@/app/_components/tag-list';
 import { getCategoryList, getTagList } from '@/app/_libs/microcms';
 
 export default async function Side() {
-  const tags = await getTagList();
+  const tags = await getTagList({
+    limit: 30,
+  });
 
   const categoryList = await getCategoryList();
 
