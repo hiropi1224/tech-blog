@@ -6,7 +6,7 @@ import { Article as ArticleType } from '@/app/_libs/microcms';
 
 const articleStyle = tv({
   slots: {
-    base: 'mt-4 flex max-w-4xl flex-col items-center justify-between gap-4 rounded-sm bg-amber-1 px-4 md:mt-0',
+    base: 'mt-4 flex w-full flex-col items-center justify-between gap-4 rounded-sm bg-amber-1 px-4 md:mt-0',
     title: 'text-3xl font-bold',
     published: 'flex flex-row-reverse',
     article:
