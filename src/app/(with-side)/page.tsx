@@ -1,4 +1,4 @@
-import { ArticleItem } from '@/app/_components/article-item/article-item';
+import { ArticleList } from '@/app/_components/article-list';
 import { getList } from '@/app/_libs/microcms';
 
 export default async function Home() {
@@ -6,9 +6,7 @@ export default async function Home() {
 
   return (
     <main className='flex flex-col gap-4'>
-      {data.contents.map((content) => (
-        <ArticleItem key={content.id} article={content} />
-      ))}
+      <ArticleList articles={data.contents} />
     </main>
   );
 }
