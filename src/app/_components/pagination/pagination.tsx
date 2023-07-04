@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import { limit } from '@/app/_const';
+
 type Props = {
   totalCount: number;
   current?: number;
@@ -13,7 +15,7 @@ export const Pagination: React.FC<Props> = ({
   basePath = '',
   q,
 }) => {
-  const pages = Array.from({ length: Math.ceil(totalCount / 10) }).map(
+  const pages = Array.from({ length: Math.ceil(totalCount / limit) }).map(
     (_, i) => i + 1
   );
 
@@ -24,12 +26,12 @@ export const Pagination: React.FC<Props> = ({
           {current !== p ? (
             <Link
               href={`${basePath}/p/${p}` + (q ? `?q=${q}` : '')}
-              className='flex h-9 w-9 items-center justify-center rounded  target:bg-sky-6'
+              className='flex h-9 w-9 items-center justify-center rounded'
             >
               {p}
             </Link>
           ) : (
-            <span className='flex h-9 w-9 items-center justify-center rounded bg-sky-6'>
+            <span className='flex h-9 w-9 cursor-default items-center justify-center rounded bg-mauve-8'>
               {p}
             </span>
           )}
