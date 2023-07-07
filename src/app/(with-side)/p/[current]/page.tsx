@@ -9,7 +9,7 @@ type Props = {
   };
 };
 
-export const revalidate = 60;
+export const revalidate = 600;
 
 export default async function Page({ params }: Props) {
   const current = parseInt(params.current as string, 10);
