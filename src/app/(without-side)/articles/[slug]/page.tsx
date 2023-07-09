@@ -10,7 +10,7 @@ type Props = {
   };
 };
 
-export const revalidate = 60;
+export const revalidate = 600;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const data = await getDetail(params.slug);
